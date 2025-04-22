@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<!-- No need to set system property "log4j2.contextSelector" to any value
+     when using <asyncLogger> or <asyncRoot>. -->
+ 
+<Configuration status="INFO">
+  <Appenders>
+      <Console name="Console-Appender" target="SYSTEM_OUT">
+            <PatternLayout>
+                <pattern>
+                    [%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n
+                </pattern>>
+            </PatternLayout>
+        </Console>
+    <!-- Async Loggers will auto-flush in batches, so switch off immediateFlush. -->
+    <RollingRandomAccessFile name="RollingRandomAccessFile" fileName="${catalina.base}/logs/MinnLakes.log" filePattern="${catalina.base}/logs/$${date:yyyy-MM}/app3-%d{MM-dd-yyyy}-%i.log.gz"
+              immediateFlush="false" append="false" bufferSize="124288">
+      <PatternLayout>
+        <Pattern>%d %p %class{1.} [%t] %location %m %ex%n</Pattern>
+      </PatternLayout>
+      <Policies>
+        <TimeBasedTriggeringPolicy />
+        <SizeBasedTriggeringPolicy size="250 MB"/>
+      </Policies>
+    </RollingRandomAccessFile>
+  </Appenders>
+  <Loggers>
+    <!-- pattern layout actually uses location, so we need to include it -->
+    <Logger name="net.mims.minnlakes" level="trace" includeLocation="true">
+      <AppenderRef ref="RollingRandomAccessFile"/>
+    </Logger>
+    <Logger name="com.zaxxer.hikari.pool.HikariPool" level="trace" includeLocation="true">
+      <AppenderRef ref="RollingRandomAccessFile"/>
+    </Logger>
+    <Logger name="org.hibernate.type" level="info" includeLocation="true">
+      <AppenderRef ref="RollingRandomAccessFile"/>
+    </Logger>
+    <Logger name="org.hibernate" level="info" includeLocation="true">
+      <AppenderRef ref="RollingRandomAccessFile"/>
+    </Logger>
+    <Root level="info" includeLocation="true">
+      <AppenderRef ref="RollingRandomAccessFile"/>
+    </Root>
+  </Loggers>
+</Configuration>
