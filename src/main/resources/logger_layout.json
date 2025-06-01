@@ -1,0 +1,57 @@
+{
+    "timestamp": { 
+        "$resolver": "timestamp",
+        "pattern": {
+            "format": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+            "timeZone": "UTC"
+        }
+    },
+    "level": {
+        "$resolver": "level",
+  "field": "name"
+    },
+    "loggerName": {
+        "$resolver": "logger",
+        "field": "fqcn"
+    },
+    "message": {
+        "$resolver": "message",
+        "stringified": true
+    },
+    "threadId": {
+        "$resolver": "thread",
+        "field": "id"
+    },
+    "source": {
+        "class": {
+            "$resolver": "source",
+            "field": "className"
+        },
+        "method": {
+            "$resolver": "source",
+            "field": "methodName"
+        },
+        "file": {
+            "$resolver": "source",
+            "field": "fileName"
+        },
+        "line": {
+            "$resolver": "source",
+            "field": "lineNumber"
+        }
+    },
+    "thrown": {
+        "message": {
+            "$resolver": "exception",
+            "field": "message"
+        },
+        "name": {
+            "$resolver": "exception",
+            "field": "className"
+        },
+        "extendedStackTrace": {
+            "$resolver": "exception",
+            "field": "stackTrace"
+        }
+    }
+}
