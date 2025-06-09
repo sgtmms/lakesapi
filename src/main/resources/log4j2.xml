@@ -34,7 +34,7 @@ when using <asyncLogger> or <asyncRoot>. -->
         <AsyncLogger name="net.mims.lakes" level="info" includeLocation="true">
             <AppenderRef ref="RollingFile"/>
         </AsyncLogger>
-        <AsyncLogger name="com.zaxxer.hikari.pool" level="debug" includeLocation="true">
+        <AsyncLogger name="com.zaxxer.hikari" level="debug" includeLocation="true">
             <AppenderRef ref="RollingFile"/>
         </AsyncLogger>
         <AsyncLogger name="org.hibernate.type" level="info" includeLocation="true">
@@ -42,6 +42,19 @@ when using <asyncLogger> or <asyncRoot>. -->
         </AsyncLogger>
         <AsyncLogger name="org.hibernate" level="info" includeLocation="true">
             <AppenderRef ref="RollingFile"/>
+        </AsyncLogger>
+        <!-- pattern layout actually uses location, so we need to include it -->
+        <AsyncLogger name="net.mims.lakes" level="info" includeLocation="true">
+            <AppenderRef ref="RollingJSON"/>
+        </AsyncLogger>
+        <AsyncLogger name="com.zaxxer.hikari" level="debug" includeLocation="true">
+            <AppenderRef ref="RollingJSON"/>
+        </AsyncLogger>
+        <AsyncLogger name="org.hibernate.type" level="info" includeLocation="true">
+            <AppenderRef ref="RollingJSON"/>
+        </AsyncLogger>
+        <AsyncLogger name="org.hibernate" level="info" includeLocation="true">
+            <AppenderRef ref="RollingJSON"/>
         </AsyncLogger>
         <AsyncRoot  level="info" includeLocation="true">
             <AppenderRef ref="RollingFile"/>
