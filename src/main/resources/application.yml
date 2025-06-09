@@ -41,3 +41,7 @@ spring:
             format:
                 console: ecs
                 file: ecs
+    spring:
+        threads:
+            virtual:
+                enabled: true

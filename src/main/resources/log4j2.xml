@@ -17,12 +17,12 @@ when using <asyncLogger> or <asyncRoot>. -->
         <!-- Async Loggers will auto-flush in batches, so switch off immediateFlush. -->
         <RollingFile name="RollingJSON" fileName="logs/MinnLakes.json" filePattern="logs/MinnLakes-%d{MM-dd-yyyy}-%i.json.gz"
                      immediateFlush="false" append="false" bufferSize="124288">
-            <JsonLayout complete="false" compact="true" eventEol="true" properties="true" stacktraceAsString="true" includeTimeMillis="true">
-
+<!--            <JsonLayout complete="false" compact="true" eventEol="true" properties="true" stacktraceAsString="true" includeTimeMillis="true">
+            
             <KeyValuePair key="appName" value="LakesAPI"/>
             <KeyValuePair key="requestId"  value="$${ctx:X-Request-Id}"/>
-        </JsonLayout>
-    
+        </JsonLayout>-->
+        <JsonTemplateLayout eventTemplateUri="classpath:logger_layout.json"/>
  
         <SizeBasedTriggeringPolicy size="25 MB"/>
         <DefaultRolloverStrategy max="10"/>
