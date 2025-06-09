@@ -1,48 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
  
 <!-- No need to set system property "log4j2.contextSelector" to any value
-     when using <asyncLogger> or <asyncRoot>. -->
+when using <asyncLogger> or <asyncRoot>. -->
  
 <Configuration status="TRACE">
-  <Appenders>
-      <Console name="Console-Appender" target="SYSTEM_OUT">
-          <JsonTemplateLayout eventTemplateUri="classpath:logger_layout.json"/>
-            <JsonLayout complete="false" compact="true" eventEol="true" properties="true" locationInfoEnabled="true" stackTraceEnabled="true" stacktraceAsString="true" includeTimeMillis="true">
-<!--                <KeyValuePair key="timestamp" value="$${date:dd-MM-yyyy HH:mm:ss}"/>-->
-                <KeyValuePair key="appName" value="LakesAPI"/>
-                <KeyValuePair key="requestId"  value="$${ctx:X-Request-Id}"/>
-            </JsonLayout>
-        </Console>
-    <!-- Async Loggers will auto-flush in batches, so switch off immediateFlush. -->
-    <RollingRandomAccessFile name="RollingRandomAccessFile" fileName="../logs/MinnLakes.log" filePattern="../logs/MinnLakes-%d{MM-dd-yyyy}-%i.log.gz"
-              immediateFlush="false" append="false" bufferSize="124288">
-      <JsonTemplateLayout eventTemplateUri="classpath:logger_layout.json"/>
-      <JsonLayout complete="false" compact="true" eventEol="true" properties="true" locationInfoEnabled="true" stackTraceEnabled="true" includeTimeMillis="true">
-<!--                <KeyValuePair key="timestamp" value="$${date:dd-MM-yyyy'T'HH:mm:ss'Z'}"/>-->
-                <KeyValuePair key="appName" value="LakesAPI" />
-            </JsonLayout>
-      <Policies>
-        <TimeBasedTriggeringPolicy />
-        <SizeBasedTriggeringPolicy size="250 MB"/>
-      </Policies>
-    </RollingRandomAccessFile>
-  </Appenders>
-  <Loggers>
-    <!-- pattern layout actually uses location, so we need to include it -->
-    <Logger name="net.mims.lakes" level="info" includeLocation="true">
-      <AppenderRef ref="RollingRandomAccessFile"/>
-    </Logger>
-    <Logger name="com.zaxxer.hikari.pool" level="debug" includeLocation="true">
-      <AppenderRef ref="RollingRandomAccessFile"/>
-    </Logger>
-    <Logger name="org.hibernate.type" level="info" includeLocation="true">
-      <AppenderRef ref="RollingRandomAccessFile"/>
-    </Logger>
-    <Logger name="org.hibernate" level="info" includeLocation="true">
-      <AppenderRef ref="RollingRandomAccessFile"/>
-    </Logger>
-    <AsyncRoot  level="info" includeLocation="true">
-      <AppenderRef ref="RollingRandomAccessFile"/>
-    </AsyncRoot>
-  </Loggers>
+    <Appenders>
+
+        !-- Async Loggers will auto-flush in batches, so switch off immediateFlush. -->
+        <RollingFile name="RollingFile" fileName="logs/MinnLakes.log"
+                     filePattern="logs/MinnLakes-%d{MM-dd-yyyy}-%i.log.gz">
+            <PatternLayout pattern="%-5p %d [%t] [%MDC] %c: %m%n" />
+            <SizeBasedTriggeringPolicy size="10 MB" />
+            <DefaultRolloverStrategy max="10"/>
+        </RollingFile>
+        
+        <!-- Async Loggers will auto-flush in batches, so switch off immediateFlush. -->
+        <RollingFile name="RollingJSON" fileName="logs/MinnLakes.json" filePattern="logs/MinnLakes-%d{MM-dd-yyyy}-%i.json.gz"
+                     immediateFlush="false" append="false" bufferSize="124288">
+            <JsonLayout complete="false" compact="true" eventEol="true" properties="true" stacktraceAsString="true" includeTimeMillis="true">
+
+            <KeyValuePair key="appName" value="LakesAPI"/>
+            <KeyValuePair key="requestId"  value="$${ctx:X-Request-Id}"/>
+        </JsonLayout>
+    
+ 
+        <SizeBasedTriggeringPolicy size="25 MB"/>
+        <DefaultRolloverStrategy max="10"/>
+
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <!-- pattern layout actually uses location, so we need to include it -->
+        <AsyncLogger name="net.mims.lakes" level="info" includeLocation="true">
+            <AppenderRef ref="RollingFile"/>
+        </AsyncLogger>
+        <AsyncLogger name="com.zaxxer.hikari.pool" level="debug" includeLocation="true">
+            <AppenderRef ref="RollingFile"/>
+        </AsyncLogger>
+        <AsyncLogger name="org.hibernate.type" level="info" includeLocation="true">
+            <AppenderRef ref="RollingFile"/>
+        </AsyncLogger>
+        <AsyncLogger name="org.hibernate" level="info" includeLocation="true">
+            <AppenderRef ref="RollingFile"/>
+        </AsyncLogger>
+        <AsyncRoot  level="info" includeLocation="true">
+            <AppenderRef ref="RollingFile"/>
+            <AppenderRef ref="RollingJSON"/>
+        </AsyncRoot>
+    </Loggers>
 </Configuration>
