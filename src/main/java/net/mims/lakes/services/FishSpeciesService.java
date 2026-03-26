@@ -5,7 +5,7 @@
 package net.mims.lakes.services;
 
 import java.util.List;
-import net.mims.lakes.domain.FishSpecies;
+import net.mims.lakes.entity.FishSpecies;
 
 /**
  *

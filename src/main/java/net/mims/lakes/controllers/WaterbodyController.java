@@ -5,7 +5,9 @@
 package net.mims.lakes.controllers;
 
 import java.util.List;
-import net.mims.lakes.domain.Waterbody;
+import java.util.concurrent.atomic.AtomicLong;
+import net.mims.lakes.entity.Greeting;
+import net.mims.lakes.entity.Waterbody;
 import net.mims.lakes.services.WaterbodyService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,16 +17,30 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory; 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin
 public class WaterbodyController {
     @Autowired
     private WaterbodyService waterbodyService;
+    
+    private static final String template = "Hello, %s!";
+
+    private final AtomicLong counter = new AtomicLong();
+    final private static Logger logger = LoggerFactory.getLogger(WaterbodyController.class);
+
+    @GetMapping(value="/greeting")
+    public Greeting greeting(@RequestParam(required = false, defaultValue = "World") String name) {
+		logger.info("==== get greeting ====");
+		return new Greeting(counter.incrementAndGet(), String.format(template, name));
+	}
  
-    @GetMapping("/waterbody")
+    @GetMapping(value="/waterbodies")
     public List<Waterbody> getWaterbody() {
+        logger.info("==== get waterbodies ====");
         return waterbodyService.fetchWaterbodiesList();
       
     }

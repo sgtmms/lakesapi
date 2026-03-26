@@ -1,7 +1,8 @@
-package net.mims.lakes.domain;
+package net.mims.lakes.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -69,6 +70,7 @@ public class FishSpecies {
 
 	/**
 	 * 
+     * @param name
 	 */
 	public FishSpecies(String name) {
 		this.imagePath = "/images/default.jpg";
@@ -77,6 +79,8 @@ public class FishSpecies {
 	
 	/**
 	 * 
+     * @param name
+     * @param imagePath
 	 */
 	public FishSpecies(String name, String imagePath) {
 		this.imagePath = "/images/default.jpg";

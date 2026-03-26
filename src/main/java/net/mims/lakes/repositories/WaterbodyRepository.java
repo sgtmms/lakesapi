@@ -6,7 +6,7 @@ package net.mims.lakes.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import net.mims.lakes.domain.Waterbody;
+import net.mims.lakes.entity.Waterbody;
 /**
  *
  * @author leroy

@@ -5,9 +5,11 @@
 package net.mims.lakes.controllers;
 
 import java.util.List;
-import net.mims.lakes.domain.FishSpecies;
+import net.mims.lakes.entity.FishSpecies;
 import net.mims.lakes.exceptions.FishSpeciesNotFoundException;
 import net.mims.lakes.services.FishSpeciesService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -19,13 +21,16 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+//@CrossOrigin
 public class FishSpeciesController {
     @Autowired
     private FishSpeciesService fishSpeciesService;
+    final private static Logger logger = LoggerFactory.getLogger(FishSpeciesController.class);
+
  
-    @GetMapping("/fishSpecies")
+    @GetMapping(value="/fishSpecies")
     public List<FishSpecies> getFishSpecies() {
+        logger.info("==== get fish species ====");
         return fishSpeciesService.fetchFishSpeciesList();
       
     }

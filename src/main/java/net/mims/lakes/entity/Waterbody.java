@@ -1,4 +1,4 @@
-package net.mims.lakes.domain;
+package net.mims.lakes.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.format.annotation.NumberFormat;

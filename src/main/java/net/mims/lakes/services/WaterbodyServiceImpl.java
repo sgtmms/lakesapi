@@ -6,7 +6,7 @@ package net.mims.lakes.services;
 
 import java.util.List;
 import java.util.Optional;
-import net.mims.lakes.domain.Waterbody;
+import net.mims.lakes.entity.Waterbody;
 import net.mims.lakes.repositories.WaterbodyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

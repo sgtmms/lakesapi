@@ -12,7 +12,7 @@
     <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
     <property name="show_sql">true</property>
     <property name="hbm2ddl.auto">create-drop</property>  
-    <mapping class="net.mims.minnlakes.domain.Waterbody" />
-    <mapping class="net.mims.minnlakes.domain.FishSpecies" />
+    <mapping class="net.mims.lakes.entity.Waterbody" />
+    <mapping class="net.mims.lakes.entity.FishSpecies" />
 </session-factory>
 </hibernate-configuration>

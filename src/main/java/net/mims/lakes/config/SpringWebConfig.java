@@ -4,12 +4,13 @@
  */
 package net.mims.lakes.config;
 
+import java.util.Arrays;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ResourceBundleMessageSource;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import org.thymeleaf.spring6.SpringTemplateEngine;
-import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.filter.CorsFilter;
 
 /**
  *
@@ -17,53 +18,7 @@ import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
  */
 @Configuration
 public class SpringWebConfig {
-    
-    @Bean
-    public ClassLoaderTemplateResolver templateResolver() {
-        ClassLoaderTemplateResolver resolver = new ClassLoaderTemplateResolver();
 
-        resolver.setPrefix("templates/"); // Location of thymeleaf template
-        resolver.setCacheable(false); // Turning of cache to facilitate template changes
-        resolver.setSuffix(".html"); // Template file extension
-        resolver.setTemplateMode("HTML"); // Template Type
-        resolver.setCharacterEncoding("UTF-8");
-
-        return resolver;
-    }
-
-    @Bean
-    public SpringTemplateEngine templateEngine() {
-        SpringTemplateEngine engine = new SpringTemplateEngine();
-        engine.setTemplateResolver(templateResolver());
-
-        return engine;
-    }
-
-   // private ApplicationContext applicationContext;
-
-
-//    public SpringWebConfig() {
-//        super();
-//    }
-
-
-//    public void setApplicationContext(final ApplicationContext applicationContext)
-//            throws BeansException {
-//        this.applicationContext = applicationContext;
-//    }
-
-
-
-    /* ******************************************************************* */
-    /*  GENERAL CONFIGURATION ARTIFACTS                                    */
-    /*  Static Resources, i18n Messages, Formatters (Conversion Service)   */
-    /* ******************************************************************* */
-
-//    public void addResourceHandlers(final ResourceHandlerRegistry registry) {
-//        registry.addResourceHandler("/images/**").addResourceLocations("/images/");
-//        registry.addResourceHandler("/css/**").addResourceLocations("/css/");
-//        registry.addResourceHandler("/js/**").addResourceLocations("/js/");
-//    }
 
     @Bean
     public ResourceBundleMessageSource messageSource() {
@@ -71,49 +26,52 @@ public class SpringWebConfig {
         messageSource.setBasename("Messages");
         return messageSource;
     }
+    /**
+  * Defines a CorsFilter bean that applies the CORS configuration globally.
+  *
+  * @return CorsFilter that applies CORS rules to all incoming HTTP requests
+  */
+
+ @Bean
+ public CorsFilter corsFilter() {
+  // Create a new CorsConfiguration object
+  CorsConfiguration config = new CorsConfiguration();
+
+  // Allow credentials like cookies, authorization headers, or TLS client
+  // certificates
+  //config.setAllowCredentials(true);
+
+  // Specify the list of allowed origins that can access the application
+  // Your front-end URLs only
+  config.setAllowedOrigins(Arrays.asList("http://localhost:4200", // Frontend development server (e.g., Angular
+                  // app)
+    "*" // Production domain
+  ));
+
+  // Allow Standard headers
+  config.setAllowedHeaders(Arrays.asList("Authorization", // Authorization → for tokens (JWT, OAuth, etc.)
+    "Cache-Control", // Cache-Control → browser cache behavior
+    "Content-Type", // Content-Type → like application/json
+    "X-Requested-With", // X-Requested-With → for Ajax requests (especially legacy)
+    "Accept", // Accept → what response formats are acceptable (application/json, etc.)
+    "Origin", // Origin → original domain of request (used internally)
+          "*"
+  ));
+
+  // Specify the HTTP methods that are allowed
+  config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS", "HEAD"));
+
+  // Create a source that maps URL patterns to CORS configurations
+  UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+
+  // Register the CORS configuration to apply to all paths (/** means all
+  // endpoints)
+  source.registerCorsConfiguration("/**", config);
+
+  // Return the CorsFilter with the configured source
+  return new CorsFilter(source);
+ }
 
 
-    /* **************************************************************** */
-    /*  THYMELEAF-SPECIFIC ARTIFACTS                                    */
-    /*  TemplateResolver <- TemplateEngine <- ViewResolver              */
-    /* **************************************************************** */
-
-//    @Bean
-//    public SpringResourceTemplateResolver templateResolver(){
-//        // SpringResourceTemplateResolver automatically integrates with Spring's own
-//        // resource resolution infrastructure, which is highly recommended.
-//        SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
-//        templateResolver.setApplicationContext(this.applicationContext);
-//        templateResolver.setPrefix("/WEB-INF/templates/");
-//        templateResolver.setSuffix(".html");
-//        // HTML is the default value, added here for the sake of clarity.
-//        templateResolver.setTemplateMode(TemplateMode.HTML);
-//        // Template cache is true by default. Set to false if you want
-//        // templates to be automatically updated when modified.
-//        templateResolver.setCacheable(true);
-//        return templateResolver;
-//    }
-//
-//    @Bean
-//    public SpringTemplateEngine templateEngine(){
-//        // SpringTemplateEngine automatically applies SpringStandardDialect and
-//        // enables Spring's own MessageSource message resolution mechanisms.
-//        SpringTemplateEngine templateEngine = new SpringTemplateEngine();
-//        templateEngine.setTemplateResolver(templateResolver());
-//        // Enabling the SpringEL compiler with Spring 4.2.4 or newer can
-//        // speed up execution in most scenarios, but might be incompatible
-//        // with specific cases when expressions in one template are reused
-//        // across different data types, so this flag is "false" by default
-//        // for safer backwards compatibility.
-//        templateEngine.setEnableSpringELCompiler(true);
-//        return templateEngine;
-//    }
-//
-//    @Bean
-//    public ThymeleafViewResolver viewResolver(){
-//        ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
-//        viewResolver.setTemplateEngine(templateEngine());
-//        return viewResolver;
-//    }
 
 }

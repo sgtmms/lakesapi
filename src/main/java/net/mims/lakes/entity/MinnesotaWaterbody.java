@@ -1,4 +1,4 @@
-package net.mims.lakes.domain;
+package net.mims.lakes.entity;
 
 import java.util.ArrayList;
 import java.util.Objects;

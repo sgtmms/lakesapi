@@ -7,15 +7,15 @@ when using <asyncLogger> or <asyncRoot>. -->
     <Appenders>
 
         !-- Async Loggers will auto-flush in batches, so switch off immediateFlush. -->
-        <RollingFile name="RollingFile" fileName="logs/MinnLakes.log"
-                     filePattern="logs/MinnLakes-%d{MM-dd-yyyy}-%i.log.gz">
+        <RollingRandomAccessFile name="RollingFile" fileName="${sys:catalina.base}/logs/LakesAPI.log"
+                     filePattern="LakesAPI-%d{MM-dd-yyyy}-%i.log.gz">
             <PatternLayout pattern="%-5p %d [%t] [%MDC] %c: %m%n" />
             <SizeBasedTriggeringPolicy size="10 MB" />
             <DefaultRolloverStrategy max="10"/>
-        </RollingFile>
+        </RollingRandomAccessFile>
         
         <!-- Async Loggers will auto-flush in batches, so switch off immediateFlush. -->
-        <RollingFile name="RollingJSON" fileName="logs/MinnLakes.json" filePattern="logs/MinnLakes-%d{MM-dd-yyyy}-%i.json.gz"
+        <RollingRandomAccessFile name="RollingJSON" fileName="${sys:catalina.base}/logs/LakesAPI.json" filePattern="LakesAPI-%d{MM-dd-yyyy}-%i.json.gz"
                      immediateFlush="false" append="false" bufferSize="124288">
 <!--            <JsonLayout complete="false" compact="true" eventEol="true" properties="true" stacktraceAsString="true" includeTimeMillis="true">
             
@@ -27,36 +27,45 @@ when using <asyncLogger> or <asyncRoot>. -->
         <SizeBasedTriggeringPolicy size="25 MB"/>
         <DefaultRolloverStrategy max="10"/>
 
-        </RollingFile>
+        </RollingRandomAccessFile>
     </Appenders>
     <Loggers>
         <!-- pattern layout actually uses location, so we need to include it -->
-        <AsyncLogger name="net.mims.lakes" level="info" includeLocation="true">
+        <AsyncLogger name="org.springframework" level="INFO" includeLocation="true">
             <AppenderRef ref="RollingFile"/>
         </AsyncLogger>
-        <AsyncLogger name="com.zaxxer.hikari" level="debug" includeLocation="true">
+        <AsyncLogger name="net.mims.lakes" level="INFO" includeLocation="true">
             <AppenderRef ref="RollingFile"/>
         </AsyncLogger>
-        <AsyncLogger name="org.hibernate.type" level="info" includeLocation="true">
+        <AsyncLogger name="com.zaxxer.hikari.pool.HikariPool" level="TRACE" includeLocation="true">
             <AppenderRef ref="RollingFile"/>
         </AsyncLogger>
-        <AsyncLogger name="org.hibernate" level="info" includeLocation="true">
+        <AsyncLogger name="org.hibernate.type" level="INFO" includeLocation="true">
+            <AppenderRef ref="RollingFile"/>
+        </AsyncLogger>
+        <AsyncLogger name="org.hibernate" level="INFO" includeLocation="true">
             <AppenderRef ref="RollingFile"/>
         </AsyncLogger>
         <!-- pattern layout actually uses location, so we need to include it -->
-        <AsyncLogger name="net.mims.lakes" level="info" includeLocation="true">
+        <AsyncLogger name="net.mims.lakes" level="INFO" includeLocation="true">
             <AppenderRef ref="RollingJSON"/>
         </AsyncLogger>
-        <AsyncLogger name="com.zaxxer.hikari" level="debug" includeLocation="true">
+        <AsyncLogger name="com.zaxxer.hikari.pool.HikariPool" level="TRACE" includeLocation="true">
             <AppenderRef ref="RollingJSON"/>
         </AsyncLogger>
-        <AsyncLogger name="org.hibernate.type" level="info" includeLocation="true">
+        <AsyncLogger name="org.hibernate.type" level="INFO" includeLocation="true">
             <AppenderRef ref="RollingJSON"/>
         </AsyncLogger>
-        <AsyncLogger name="org.hibernate" level="info" includeLocation="true">
+        <AsyncLogger name="org.hibernate" level="INFO" includeLocation="true">
             <AppenderRef ref="RollingJSON"/>
         </AsyncLogger>
-        <AsyncRoot  level="info" includeLocation="true">
+        <AsyncLogger name="org.hibernate.SQL" level="DEBUG" includeLocation="true">
+            <AppenderRef ref="RollingJSON"/>
+        </AsyncLogger>
+        <AsyncLogger name="org.hibernate.type.descriptor.sql.BasicBinder" level="TRACE" includeLocation="true">
+            <AppenderRef ref="RollingJSON"/>
+        </AsyncLogger>
+        <AsyncRoot  level="INFO" includeLocation="true">
             <AppenderRef ref="RollingFile"/>
             <AppenderRef ref="RollingJSON"/>
         </AsyncRoot>

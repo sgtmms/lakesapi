@@ -2777,3 +2777,224 @@ INFO  2025-06-09 01:23:12,978 [main] [{}] org.springframework.boot.autoconfigure
 INFO  2025-06-09 01:23:12,991 [main] [{}] org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean: Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
 INFO  2025-06-09 01:23:13,359 [main] [{}] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port 8080 (http) with context path '/'
 INFO  2025-06-09 01:23:13,366 [main] [{}] net.mims.lakes.MinnLakesApplication: Started MinnLakesApplication in 3.14 seconds (process running for 3.829)
+INFO  2025-06-09 01:28:17,050 [main] [{}] net.mims.lakes.MinnLakesApplication: Starting MinnLakesApplication using Java 21.0.6 with PID 85205 (/home/leroy/NetBeansProjects/MinnLakesAPI/target/classes started by leroy in /home/leroy/NetBeansProjects/MinnLakesAPI)
+INFO  2025-06-09 01:28:17,051 [main] [{}] net.mims.lakes.MinnLakesApplication: No active profile set, falling back to 1 default profile: "default"
+INFO  2025-06-09 01:28:17,603 [main] [{}] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+INFO  2025-06-09 01:28:17,691 [main] [{}] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 81 ms. Found 2 JPA repository interfaces.
+INFO  2025-06-09 01:28:18,084 [main] [{}] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port 8080 (http)
+INFO  2025-06-09 01:28:18,142 [main] [{}] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 1056 ms
+INFO  2025-06-09 01:28:18,459 [main] [{}] org.hibernate.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
+INFO  2025-06-09 01:28:18,486 [main] [{}] org.hibernate.Version: HHH000412: Hibernate ORM core version 6.6.15.Final
+INFO  2025-06-09 01:28:18,503 [main] [{}] org.hibernate.cache.internal.RegionFactoryInitiator: HHH000026: Second-level cache disabled
+INFO  2025-06-09 01:28:18,651 [main] [{}] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
+INFO  2025-06-09 01:28:18,701 [main] [{}] org.hibernate.orm.connections.pooling: HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (LakeHikariPool)']
+	Database driver: undefined/unknown
+	Database version: 14.15
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+INFO  2025-06-09 01:28:19,164 [main] [{}] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+INFO  2025-06-09 01:28:19,165 [main] [{}] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+WARN  2025-06-09 01:28:19,398 [main] [{}] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+INFO  2025-06-09 01:28:19,470 [main] [{}] org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping: Adding welcome page template: index
+INFO  2025-06-09 01:28:19,483 [main] [{}] org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean: Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+WARN  2025-06-09 01:28:19,841 [main] [{}] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+INFO  2025-06-09 01:28:19,842 [main] [{}] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
+INFO  2025-06-09 01:28:19,860 [main] [{}] org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLogger: 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+ERROR 2025-06-09 01:28:19,870 [main] [{}] org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter: 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+INFO  2025-06-09 01:28:37,397 [SpringApplicationShutdownHook] [{}] org.springframework.boot.web.embedded.tomcat.GracefulShutdown: Commencing graceful shutdown. Waiting for active requests to complete
+INFO  2025-06-09 01:28:37,400 [tomcat-shutdown] [{}] org.springframework.boot.web.embedded.tomcat.GracefulShutdown: Graceful shutdown complete
+INFO  2025-06-09 01:28:37,403 [SpringApplicationShutdownHook] [{}] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
+INFO  2025-06-09 01:28:57,848 [main] [{}] net.mims.lakes.MinnLakesApplication: Starting MinnLakesApplication using Java 21.0.6 with PID 85414 (/home/leroy/NetBeansProjects/MinnLakesAPI/target/classes started by leroy in /home/leroy/NetBeansProjects/MinnLakesAPI)
+INFO  2025-06-09 01:28:57,848 [main] [{}] net.mims.lakes.MinnLakesApplication: No active profile set, falling back to 1 default profile: "default"
+INFO  2025-06-09 01:28:58,387 [main] [{}] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+INFO  2025-06-09 01:28:58,472 [main] [{}] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 79 ms. Found 2 JPA repository interfaces.
+INFO  2025-06-09 01:28:58,876 [main] [{}] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port 8080 (http)
+INFO  2025-06-09 01:28:58,942 [main] [{}] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 1060 ms
+INFO  2025-06-09 01:28:59,333 [main] [{}] org.hibernate.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
+INFO  2025-06-09 01:28:59,370 [main] [{}] org.hibernate.Version: HHH000412: Hibernate ORM core version 6.6.15.Final
+INFO  2025-06-09 01:28:59,389 [main] [{}] org.hibernate.cache.internal.RegionFactoryInitiator: HHH000026: Second-level cache disabled
+INFO  2025-06-09 01:28:59,537 [main] [{}] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
+INFO  2025-06-09 01:28:59,585 [main] [{}] org.hibernate.orm.connections.pooling: HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (LakeHikariPool)']
+	Database driver: undefined/unknown
+	Database version: 14.15
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+INFO  2025-06-09 01:29:00,047 [main] [{}] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+INFO  2025-06-09 01:29:00,048 [main] [{}] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+WARN  2025-06-09 01:29:00,276 [main] [{}] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+INFO  2025-06-09 01:29:00,347 [main] [{}] org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping: Adding welcome page template: index
+INFO  2025-06-09 01:29:00,360 [main] [{}] org.springframework.validation.beanvalidation.OptionalValidatorFactoryBean: Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+INFO  2025-06-09 01:29:00,708 [main] [{}] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port 8080 (http) with context path '/'
+INFO  2025-06-09 01:29:00,715 [main] [{}] net.mims.lakes.MinnLakesApplication: Started MinnLakesApplication in 3.159 seconds (process running for 3.774)
+INFO  2025-06-09 01:30:09,344 [tomcat-handler-0] [{}] org.springframework.web.servlet.DispatcherServlet: Initializing Servlet 'dispatcherServlet'
+INFO  2025-06-09 01:30:09,345 [tomcat-handler-0] [{}] org.springframework.web.servlet.DispatcherServlet: Completed initialization in 1 ms
+INFO  2025-06-09 01:33:14,081 [background-preinit] [{}] org.hibernate.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.2.Final
+INFO  2025-06-09 01:33:14,124 [main] [{}] net.mims.lakes.MinnLakesApplication: Starting MinnLakesApplication using Java 21.0.6 with PID 86637 (/home/leroy/NetBeansProjects/MinnLakesAPI/target/classes started by leroy in /home/leroy/NetBeansProjects/MinnLakesAPI)
+INFO  2025-06-09 01:33:14,125 [main] [{}] net.mims.lakes.MinnLakesApplication: No active profile set, falling back to 1 default profile: "default"
+INFO  2025-06-09 01:33:14,741 [main] [{}] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+INFO  2025-06-09 01:33:14,850 [main] [{}] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 103 ms. Found 2 JPA repository interfaces.
+INFO  2025-06-09 01:33:15,299 [main] [{}] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port 8080 (http)
+INFO  2025-06-09 01:33:15,353 [main] [{}] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 1190 ms
+INFO  2025-06-09 01:33:15,732 [main] [{}] org.hibernate.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
+INFO  2025-06-09 01:33:15,767 [main] [{}] org.hibernate.Version: HHH000412: Hibernate ORM core version 6.6.15.Final
+INFO  2025-06-09 01:33:15,788 [main] [{}] org.hibernate.cache.internal.RegionFactoryInitiator: HHH000026: Second-level cache disabled
+INFO  2025-06-09 01:33:15,951 [main] [{}] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
+INFO  2025-06-09 01:33:16,006 [main] [{}] org.hibernate.orm.connections.pooling: HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (LakeHikariPool)']
+	Database driver: undefined/unknown
+	Database version: 14.15
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+INFO  2025-06-09 01:33:16,551 [main] [{}] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+INFO  2025-06-09 01:33:16,552 [main] [{}] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+WARN  2025-06-09 01:33:16,835 [main] [{}] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+INFO  2025-06-09 01:33:16,924 [main] [{}] org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping: Adding welcome page template: index
+WARN  2025-06-09 01:33:17,337 [main] [{}] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+INFO  2025-06-09 01:33:17,339 [main] [{}] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
+INFO  2025-06-09 01:33:17,361 [main] [{}] org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLogger: 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+ERROR 2025-06-09 01:33:17,371 [main] [{}] org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter: 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+INFO  2025-06-09 01:33:34,051 [SpringApplicationShutdownHook] [{}] org.springframework.boot.web.embedded.tomcat.GracefulShutdown: Commencing graceful shutdown. Waiting for active requests to complete
+INFO  2025-06-09 01:33:34,053 [tomcat-shutdown] [{}] org.springframework.boot.web.embedded.tomcat.GracefulShutdown: Graceful shutdown complete
+INFO  2025-06-09 01:33:34,055 [SpringApplicationShutdownHook] [{}] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
+INFO  2025-06-09 01:33:41,908 [background-preinit] [{}] org.hibernate.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.2.Final
+INFO  2025-06-09 01:33:41,943 [main] [{}] net.mims.lakes.MinnLakesApplication: Starting MinnLakesApplication using Java 21.0.6 with PID 87021 (/home/leroy/NetBeansProjects/MinnLakesAPI/target/classes started by leroy in /home/leroy/NetBeansProjects/MinnLakesAPI)
+INFO  2025-06-09 01:33:41,943 [main] [{}] net.mims.lakes.MinnLakesApplication: No active profile set, falling back to 1 default profile: "default"
+INFO  2025-06-09 01:33:42,613 [main] [{}] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+INFO  2025-06-09 01:33:42,712 [main] [{}] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 91 ms. Found 2 JPA repository interfaces.
+INFO  2025-06-09 01:33:43,196 [main] [{}] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port 8080 (http)
+INFO  2025-06-09 01:33:43,241 [main] [{}] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 1263 ms
+INFO  2025-06-09 01:33:43,567 [main] [{}] org.hibernate.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
+INFO  2025-06-09 01:33:43,601 [main] [{}] org.hibernate.Version: HHH000412: Hibernate ORM core version 6.6.15.Final
+INFO  2025-06-09 01:33:43,623 [main] [{}] org.hibernate.cache.internal.RegionFactoryInitiator: HHH000026: Second-level cache disabled
+INFO  2025-06-09 01:33:43,787 [main] [{}] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
+INFO  2025-06-09 01:33:43,839 [main] [{}] org.hibernate.orm.connections.pooling: HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (LakeHikariPool)']
+	Database driver: undefined/unknown
+	Database version: 14.15
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+INFO  2025-06-09 01:33:44,386 [main] [{}] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+INFO  2025-06-09 01:33:44,388 [main] [{}] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+WARN  2025-06-09 01:33:44,693 [main] [{}] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+INFO  2025-06-09 01:33:44,783 [main] [{}] org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping: Adding welcome page template: index
+INFO  2025-06-09 01:33:45,247 [main] [{}] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port 8080 (http) with context path '/'
+INFO  2025-06-09 01:33:45,258 [main] [{}] net.mims.lakes.MinnLakesApplication: Started MinnLakesApplication in 3.617 seconds (process running for 4.269)
+INFO  2025-06-09 01:36:34,185 [SpringApplicationShutdownHook] [{}] org.springframework.boot.web.embedded.tomcat.GracefulShutdown: Commencing graceful shutdown. Waiting for active requests to complete
+INFO  2025-06-09 01:36:34,187 [tomcat-shutdown] [{}] org.springframework.boot.web.embedded.tomcat.GracefulShutdown: Graceful shutdown complete
+INFO  2025-06-09 01:36:34,190 [SpringApplicationShutdownHook] [{}] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
+INFO  2025-06-09 01:37:01,998 [background-preinit] [{}] org.hibernate.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.2.Final
+INFO  2025-06-09 01:37:02,041 [main] [{}] net.mims.lakes.MinnLakesApplication: Starting MinnLakesApplication using Java 21.0.6 with PID 87937 (/home/leroy/NetBeansProjects/MinnLakesAPI/target/classes started by leroy in /home/leroy/NetBeansProjects/MinnLakesAPI)
+INFO  2025-06-09 01:37:02,042 [main] [{}] net.mims.lakes.MinnLakesApplication: No active profile set, falling back to 1 default profile: "default"
+INFO  2025-06-09 01:37:02,713 [main] [{}] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+INFO  2025-06-09 01:37:02,820 [main] [{}] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 100 ms. Found 2 JPA repository interfaces.
+INFO  2025-06-09 01:37:03,294 [main] [{}] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port 8080 (http)
+INFO  2025-06-09 01:37:03,352 [main] [{}] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 1265 ms
+INFO  2025-06-09 01:37:03,732 [main] [{}] org.hibernate.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
+INFO  2025-06-09 01:37:03,762 [main] [{}] org.hibernate.Version: HHH000412: Hibernate ORM core version 6.6.15.Final
+INFO  2025-06-09 01:37:03,785 [main] [{}] org.hibernate.cache.internal.RegionFactoryInitiator: HHH000026: Second-level cache disabled
+INFO  2025-06-09 01:37:03,927 [main] [{}] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
+INFO  2025-06-09 01:37:03,978 [main] [{}] org.hibernate.orm.connections.pooling: HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (LakeHikariPool)']
+	Database driver: undefined/unknown
+	Database version: 14.15
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+INFO  2025-06-09 01:37:04,710 [main] [{}] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+INFO  2025-06-09 01:37:04,711 [main] [{}] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+WARN  2025-06-09 01:37:05,086 [main] [{}] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+INFO  2025-06-09 01:37:05,166 [main] [{}] org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping: Adding welcome page template: index
+INFO  2025-06-09 01:37:05,684 [main] [{}] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port 8080 (http) with context path '/'
+INFO  2025-06-09 01:37:05,699 [main] [{}] net.mims.lakes.MinnLakesApplication: Started MinnLakesApplication in 4.009 seconds (process running for 4.734)
+INFO  2025-06-09 01:43:14,361 [SpringApplicationShutdownHook] [{}] org.springframework.boot.web.embedded.tomcat.GracefulShutdown: Commencing graceful shutdown. Waiting for active requests to complete
+INFO  2025-06-09 01:43:14,363 [tomcat-shutdown] [{}] org.springframework.boot.web.embedded.tomcat.GracefulShutdown: Graceful shutdown complete
+INFO  2025-06-09 01:43:14,367 [SpringApplicationShutdownHook] [{}] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
+INFO  2025-06-09 01:44:31,867 [background-preinit] [{}] org.hibernate.validator.internal.util.Version: HV000001: Hibernate Validator 8.0.2.Final
+INFO  2025-06-09 01:44:31,897 [main] [{}] net.mims.lakes.MinnLakesApplication: Starting MinnLakesApplication using Java 21.0.6 with PID 89823 (/home/leroy/NetBeansProjects/MinnLakesAPI/target/classes started by leroy in /home/leroy/NetBeansProjects/MinnLakesAPI)
+INFO  2025-06-09 01:44:31,898 [main] [{}] net.mims.lakes.MinnLakesApplication: No active profile set, falling back to 1 default profile: "default"
+INFO  2025-06-09 01:44:32,420 [main] [{}] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+INFO  2025-06-09 01:44:32,500 [main] [{}] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 74 ms. Found 2 JPA repository interfaces.
+INFO  2025-06-09 01:44:32,873 [main] [{}] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat initialized with port 8080 (http)
+INFO  2025-06-09 01:44:32,915 [main] [{}] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext: Root WebApplicationContext: initialization completed in 984 ms
+INFO  2025-06-09 01:44:33,202 [main] [{}] org.hibernate.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
+INFO  2025-06-09 01:44:33,229 [main] [{}] org.hibernate.Version: HHH000412: Hibernate ORM core version 6.6.15.Final
+INFO  2025-06-09 01:44:33,247 [main] [{}] org.hibernate.cache.internal.RegionFactoryInitiator: HHH000026: Second-level cache disabled
+INFO  2025-06-09 01:44:33,390 [main] [{}] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo: No LoadTimeWeaver setup: ignoring JPA class transformer
+INFO  2025-06-09 01:44:33,435 [main] [{}] org.hibernate.orm.connections.pooling: HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (LakeHikariPool)']
+	Database driver: undefined/unknown
+	Database version: 14.15
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+INFO  2025-06-09 01:44:33,941 [main] [{}] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+INFO  2025-06-09 01:44:33,943 [main] [{}] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean: Initialized JPA EntityManagerFactory for persistence unit 'default'
+WARN  2025-06-09 01:44:34,196 [main] [{}] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+INFO  2025-06-09 01:44:34,270 [main] [{}] org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping: Adding welcome page template: index
+INFO  2025-06-09 01:44:34,651 [main] [{}] org.springframework.boot.web.embedded.tomcat.TomcatWebServer: Tomcat started on port 8080 (http) with context path '/'
+INFO  2025-06-09 01:44:34,659 [main] [{}] net.mims.lakes.MinnLakesApplication: Started MinnLakesApplication in 3.014 seconds (process running for 3.612)
+INFO  2025-06-09 01:55:35,906 [SpringApplicationShutdownHook] [{}] org.springframework.boot.web.embedded.tomcat.GracefulShutdown: Commencing graceful shutdown. Waiting for active requests to complete
+INFO  2025-06-09 01:55:35,908 [tomcat-shutdown] [{}] org.springframework.boot.web.embedded.tomcat.GracefulShutdown: Graceful shutdown complete
+INFO  2025-06-09 01:55:35,911 [SpringApplicationShutdownHook] [{}] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean: Closing JPA EntityManagerFactory for persistence unit 'default'
+INFO  2025-12-03 23:03:05,367 [main] [{}] net.mims.lakes.MinnLakesApplication: Starting MinnLakesApplication using Java 25.0.1 with PID 38809 (/home/leroy/NetBeansProjects/MinnLakesAPI/target/classes started by leroy in /home/leroy/NetBeansProjects/MinnLakesAPI)
+INFO  2025-12-03 23:03:05,368 [main] [{}] net.mims.lakes.MinnLakesApplication: No active profile set, falling back to 1 default profile: "default"
+INFO  2025-12-03 23:03:05,494 [main] [{}] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+INFO  2025-12-03 23:03:05,504 [main] [{}] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+WARN  2025-12-03 23:03:05,520 [main] [{}] org.springframework.boot.web.server.servlet.context.AnnotationConfigServletWebServerApplicationContext: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+ERROR 2025-12-03 23:03:05,584 [main] [{}] org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter: 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web application could not be started as there was no org.springframework.boot.web.server.servlet.ServletWebServerFactory bean defined in the context.
+
+Action:
+
+Check your application's dependencies for a supported servlet web server.
+Check the configured web application type.
+

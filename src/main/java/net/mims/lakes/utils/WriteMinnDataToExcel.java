@@ -1,7 +1,7 @@
 package net.mims.lakes.utils;
 
-import net.mims.lakes.domain.FishSpecies;
-import net.mims.lakes.domain.Waterbody;
+import net.mims.lakes.entity.FishSpecies;
+import net.mims.lakes.entity.Waterbody;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.xssf.streaming.SXSSFSheet;
@@ -12,8 +12,12 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.HashSet;
 import java.util.List;
+import net.mims.lakes.entity.WriteMinnDataToDatabase;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class WriteMinnDataToExcel {
+    final private static Logger logger = LoggerFactory.getLogger(WriteMinnDataToExcel.class);
 
     public WriteMinnDataToExcel(List<Waterbody> waterbodies) throws NoSuchMethodException {
 
@@ -87,7 +91,7 @@ public class WriteMinnDataToExcel {
                 FileOutputStream out = new FileOutputStream(new File("MinnLakeData2.xlsx"));
                 workbook.write(out);
                 out.close();
-                System.out.println("MinnLakeData.xlsx written successfully on disk.");
+                logger.info("MinnLakeData.xlsx written successfully on disk.");
             } catch (Exception e) {
                 e.printStackTrace();
             }

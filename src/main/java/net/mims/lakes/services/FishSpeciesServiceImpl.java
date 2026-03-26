@@ -6,9 +6,10 @@ package net.mims.lakes.services;
 
 import java.util.List;
 import java.util.Optional;
-import net.mims.lakes.domain.FishSpecies;
+import net.mims.lakes.entity.FishSpecies;
 import net.mims.lakes.repositories.FishSpeciesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 /**
@@ -23,7 +24,7 @@ public class FishSpeciesServiceImpl implements FishSpeciesService{
  
    public List<FishSpecies> getAllFishSpecies()
     {
-        return fishSpeciesRepository.findAll();
+        return fishSpeciesRepository.findAll(Sort.by(Sort.Direction.ASC, "fishTypeName"));
     }
  
     public void save(FishSpecies fishSpecies)
@@ -55,7 +56,8 @@ public class FishSpeciesServiceImpl implements FishSpeciesService{
 
     @Override
     public List<FishSpecies> fetchFishSpeciesList() {
-        return fishSpeciesRepository.findAll();
+        return fishSpeciesRepository.findAll(Sort.by(Sort.Direction.ASC, "fishTypeName"));
+    
     }
 
     @Override
